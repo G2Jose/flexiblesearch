@@ -20,10 +20,11 @@ const _query = async (page, query) => {
   await page.waitForNavigation({ waitUntil: "load" });
   await page.click(".CodeMirror-scroll");
   page.type(query);
-  page.click(".buttonSubmit", { button: "left" });
+  // page.click(".buttonSubmit", { button: "left" });
   await page.waitFor(1000); // Not sure why this is required
-  await page.click(".buttonSubmit", { button: "left" });
-  await page.waitFor(2000);
+  const submitButton = await page.$(".buttonSubmit");
+  await submitButton.click({ clickCount: 10 });
+  await page.waitFor("table");
   const rows = await page.evaluate(() => {
     const _rows = Array.from(document.querySelectorAll("tr"));
     const keys = Array.from(_rows[0].querySelectorAll("th")).map(
@@ -53,6 +54,7 @@ const query = async querytxt => {
     ignoreHTTPSErrors: true
   });
   const page = await browser.newPage();
+  page.setViewport({ width: 1000, height: 1000 });
   await page.goto(URL, {
     waituntil: "networkidle"
   });
