@@ -1,6 +1,6 @@
 {
   "name": "flexiblesearch",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "An npm module that lets you run hybris queries and return data as arrays of plain javascript objects",
   "main": "index.js",
   "scripts": {
@@ -10,5 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/G2Jose/flexiblesearch"
   }
 }
