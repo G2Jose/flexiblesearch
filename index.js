@@ -48,7 +48,10 @@ const _query = async (page, query) => {
 };
 
 const query = async querytxt => {
-  const browser = await p.launch({ headless: false, ignoreHTTPSErrors: true });
+  const browser = await p.launch({
+    headless: false,
+    ignoreHTTPSErrors: true
+  });
   const page = await browser.newPage();
   await page.goto(URL, {
     waituntil: "networkidle"
@@ -59,7 +62,8 @@ const query = async querytxt => {
   return rows;
 };
 
-const initialize = (url, username, password) => {
+const initialize = (options = {}) => {
+  const { username, password, url } = options;
   USERNAME = username || "admin";
   PASSWORD = password || "nimda";
   URL = url || "https://localhost:9002/admin";
