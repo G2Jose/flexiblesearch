@@ -25,7 +25,7 @@ The flexiblesearch module provides 2 methods:
 ## Example Usage
 
 ```
-const f = require('flexible_search');
+const f = require('flexiblesearch');
 
 const options = {
     username: "admin",
