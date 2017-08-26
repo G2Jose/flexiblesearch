@@ -1,6 +1,6 @@
 {
   "name": "flexiblesearch",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "An npm module that lets you run hybris queries and return data as arrays of plain javascript objects",
   "main": "index.js",
   "scripts": {
